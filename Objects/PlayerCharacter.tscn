@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 21.8012
-height = 43.0045
+height = 42.3784
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
