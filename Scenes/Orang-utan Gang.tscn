@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Orang-utan Gang.png" type="Texture" id=1]
+
+[node name="Orang-utan Gang" type="Sprite"]
+position = Vector2( 4848.47, -255.035 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -4851.27, 258.606, -4690.63, 257.868, -4691.31, 239.137, -4678.37, 206.103, -4664.75, 183.285, -4846.89, 178.017, -4847.29, 92.0645, -4820.07, 91.0017, -4820.71, 88.56, -4846.98, 83.2298, -4846.13, -303.217, -4855.45, -303.575 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -3844.52, 19.743, -3848.32, 28.5027, -3661.15, 28.2107, -3645.09, 27.9187, -3648.31, 18.5751 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -3777.39, 112.144, -3781.19, 124.035, -3582.84, 89.0743, -3484.86, 93.3551, -3487.24, 84.3176, -3630.65, 79.0854 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1669.14, 212.256, -1522.62, 210.938, -1504.18, 149.274, -1273.86, 183.005, -1293.1, 224.641, -1297.31, 266.014, -1653.86, 256, -1660.44, 233.601 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1412.47, 91.5634, -1195.6, 126.085, -1127.08, 125.558, -1051.19, 107.902, -958.164, 91.827, -857.763, 93.6716, -863.033, 83.1308, -1010.34, 82.6038, -1139.99, 108.956, -1202.97, 109.219, -1404.04, 82.6038 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1315.23, 28.3188, -1214.3, 41.2312, -1155.8, 39.6501, -1130.51, 44.9205, -1024.04, 25.9471, -1037.75, 15.9334, -1102.05, 18.3051, -1131.56, 31.7446, -1151.85, 27.0012, -1215.62, 31.481, -1302.58, 20.6767 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1221.42, -38.8787, -1115.75, -40.1963, -1127.08, -48.3654, -1210.88, -45.9937 )
