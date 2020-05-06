@@ -12,6 +12,7 @@ extents = Vector2( 10.8086, 295.487 )
 [node name="Node2D" type="Node2D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
+position = Vector2( 31.725, 56.486 )
 
 [node name="Bounding Box" type="StaticBody2D" parent="."]
 
