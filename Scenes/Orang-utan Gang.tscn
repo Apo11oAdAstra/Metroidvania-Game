@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Orang-utan Gang.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/PlayerCharacter.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/marisa.png" type="Texture" id=3]
 [ext_resource path="res://Objects/PlayerCharacter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Backgrounds/Background.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Environments/Sign.png" type="Texture" id=6]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 1.58805
-height = 5.54865
+[ext_resource path="res://Objects/Big Chungus.tscn" type="PackedScene" id=7]
 
 [node name="Orang-utan Gang" type="Sprite"]
 position = Vector2( 4848.47, -255.035 )
@@ -71,35 +66,21 @@ polygon = PoolVector2Array( 4506.27, -38.4279, 4615.48, -36.968, 4559.12, -49.52
 [node name="Col Poly 17" type="CollisionPolygon2D" parent="Static Platforms"]
 polygon = PoolVector2Array( 3122.38, -168.637, 3203.26, -168.637, 3214.64, -140.606, 3256.69, -141.482, 3267.49, -170.973, 3430.72, -167.469, 3438.02, -140.606, 3479.48, -139.73, 3491.16, -170.973, 3548.97, -170.389, 3554.52, -164.258, 3496.71, -163.382, 3483.86, -132.431, 3431.59, -131.847, 3422.83, -160.754, 3272.46, -165.718, 3261.36, -132.431, 3209.39, -132.139, 3194.5, -160.754, 3120.33, -161.63 )
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 79.4326, 76.731 )
-
-[node name="PlayerCharacter" type="KinematicBody2D" parent="Node2D"]
-input_pickable = true
-script = ExtResource( 2 )
-
-[node name="marisa" type="Sprite" parent="Node2D/PlayerCharacter"]
-position = Vector2( -4756.1, 123.582 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PlayerCharacter"]
-use_parent_material = true
-position = Vector2( -4753.14, 130.29 )
-scale = Vector2( 10, 10 )
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Static Platforms"]
+polygon = PoolVector2Array( -4936.26, 303.245, 4955.45, 282.543, 4950.69, 255.57, -4936.25, 255.371 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1171.72, -100.79 )
+[node name="PlayerCharacter" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3335.15, -271.308 )
 
-[node name="Background" type="Sprite" parent="KinematicBody2D"]
+[node name="Background" type="Sprite" parent="PlayerCharacter"]
 position = Vector2( 3.13281, 5.45454 )
 scale = Vector2( 1.56337, 1.56337 )
 z_index = -1
 texture = ExtResource( 5 )
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D/Background"]
+[node name="Camera2D" type="Camera2D" parent="PlayerCharacter/Background"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 drag_margin_left = 0.0
@@ -111,3 +92,6 @@ drag_margin_bottom = 0.0
 position = Vector2( -1041.09, -9.39487 )
 scale = Vector2( 0.591069, 0.591069 )
 texture = ExtResource( 6 )
+
+[node name="Big Chungus" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3062.27, -66.7857 )
