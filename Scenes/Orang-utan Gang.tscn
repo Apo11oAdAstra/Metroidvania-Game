@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Orang-utan Gang.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Backgrounds/Background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/PlayerCharacter.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/marisa.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/PlayerCharacter.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Backgrounds/Background.png" type="Texture" id=4]
+[ext_resource path="res://Objects/PlayerCharacter.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 1.58805
@@ -72,8 +73,9 @@ polygon = PoolVector2Array( 3122.38, -168.637, 3203.26, -168.637, 3214.64, -140.
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="Node2D"]
+visible = false
 input_pickable = true
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="marisa" type="Sprite" parent="Node2D/PlayerCharacter"]
 position = Vector2( -4756.1, 123.582 )
@@ -83,11 +85,7 @@ texture = ExtResource( 3 )
 position = Vector2( 0.75386, -20.8355 )
 scale = Vector2( 1.56337, 1.56337 )
 z_index = -1
-texture = ExtResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="Node2D/PlayerCharacter/marisa/Background"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PlayerCharacter"]
 use_parent_material = true
@@ -96,3 +94,12 @@ scale = Vector2( 10, 10 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -4959.77, -30.3582 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 204.428, 133.105 )
+scale = Vector2( 1.56337, 1.56337 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
