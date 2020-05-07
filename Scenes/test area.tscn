@@ -37,7 +37,8 @@ position = Vector2( 1014.42, 298.875 )
 shape = SubResource( 2 )
 
 [node name="Barrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 328.589, 438.425 )
+position = Vector2( 324.693, 440.373 )
+rotation = 1.51554
 
 [node name="icon" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -47,3 +48,6 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="StaticBarrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 729.881, 446.217 )
