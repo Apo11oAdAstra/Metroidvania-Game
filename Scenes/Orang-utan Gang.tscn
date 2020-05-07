@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Orang-utan Gang.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerCharacter.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/marisa.png" type="Texture" id=3]
 [ext_resource path="res://Objects/PlayerCharacter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Backgrounds/Background.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Environments/Sign.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 1.58805
@@ -71,9 +72,9 @@ polygon = PoolVector2Array( 4506.27, -38.4279, 4615.48, -36.968, 4559.12, -49.52
 polygon = PoolVector2Array( 3122.38, -168.637, 3203.26, -168.637, 3214.64, -140.606, 3256.69, -141.482, 3267.49, -170.973, 3430.72, -167.469, 3438.02, -140.606, 3479.48, -139.73, 3491.16, -170.973, 3548.97, -170.389, 3554.52, -164.258, 3496.71, -163.382, 3483.86, -132.431, 3431.59, -131.847, 3422.83, -160.754, 3272.46, -165.718, 3261.36, -132.431, 3209.39, -132.139, 3194.5, -160.754, 3120.33, -161.63 )
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 79.4326, 76.731 )
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="Node2D"]
-visible = false
 input_pickable = true
 script = ExtResource( 2 )
 
@@ -90,20 +91,23 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1395.65, -272.626 )
-scale = Vector2( 1, 1 )
+position = Vector2( -1171.72, -100.79 )
 
 [node name="Background" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 204.428, 133.105 )
+position = Vector2( 3.13281, 5.45454 )
 scale = Vector2( 1.56337, 1.56337 )
 z_index = -1
 texture = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D/Background"]
-scale = Vector2( 1, 1 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
+
+[node name="Sign" type="Sprite" parent="."]
+position = Vector2( -1041.09, -9.39487 )
+scale = Vector2( 0.591069, 0.591069 )
+texture = ExtResource( 6 )

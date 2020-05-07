@@ -16,7 +16,6 @@ extents = Vector2( 10.8086, 295.487 )
 position = Vector2( 75.9727, 479.213 )
 
 [node name="Bounding Box" type="StaticBody2D" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
