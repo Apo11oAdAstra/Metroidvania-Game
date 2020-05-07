@@ -14,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	self.rotate(PI/60)
+	#self.rotate(PI/60)
 	
 	#handle delayed barrel launching
 	if holding and Input.is_action_just_pressed("ui_accept"):
