@@ -36,7 +36,7 @@ func _physics_process(delta):
 		#handle jumps
 		if is_on_floor() and jump_counter > 0:
 			jump_counter = 0
-		if Input.is_action_just_pressed("ui_up") and jump_counter == 0:
+		if Input.is_action_just_pressed("ui_accept") and jump_counter == 0:
 			velocity.y = -jump_force
 			jump_counter += 1
 		#if jump_counter >= 1:
@@ -47,8 +47,6 @@ func _physics_process(delta):
 		#process friction
 		if input.x == 0:
 			if is_on_floor():
-				velocity.x /= friction / 5
-			else:
 				velocity.x /= friction
 		
 		#flips the character horizontally
@@ -59,7 +57,7 @@ func _physics_process(delta):
 			elif input.x < 0 and right == true:
 				sprite.set_scale(Vector2(-1, 1))
 				right = false
-	else:
+	elif launchCounter > 0:
 		#check if gravity is enabled
 		if launchGravity:
 			velocity += gravity
@@ -78,5 +76,11 @@ func launch(launchVect, enableGrav, duration):
 	launchGravity = enableGrav
 	launchDuration = duration
 	
+	self.show()
 	launchCounter = 1
-	
+
+func disableMovement(position):
+	self.hide()
+	self.set_global_position(position)
+	velocity = Vector2(0,0)
+	launchCounter = -1

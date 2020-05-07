@@ -13,7 +13,7 @@ extents = Vector2( 10.8086, 295.487 )
 [node name="Node2D" type="Node2D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
-position = Vector2( -130.517, 407.136 )
+position = Vector2( 75.9727, 479.213 )
 
 [node name="Bounding Box" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -37,9 +37,8 @@ shape = SubResource( 2 )
 position = Vector2( 1014.42, 298.875 )
 shape = SubResource( 2 )
 
-[node name="Area2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 800.009, 467.646 )
-collision_mask = 1027
+[node name="Barrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 328.589, 438.425 )
 
 [node name="icon" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
