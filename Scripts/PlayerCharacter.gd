@@ -31,22 +31,25 @@ func _physics_process(delta):
 	velocity.x += input.normalized().x * acceleration.x
 	
 	#handle jumps
-	if jump_counter > 100:
+	if is_on_floor() and jump_counter > 0:
 		jump_counter = 0
 	if Input.is_action_just_pressed("ui_up") and jump_counter == 0:
 		velocity.y = -jump_force
 		jump_counter += 1
-	if jump_counter >= 1:
-		jump_counter += 1
+	#if jump_counter >= 1:
+	#	jump_counter += 1
 	#process gravity
 	velocity += gravity
 	
 	#process friction
 	if input.x == 0:
-		velocity.x /= friction
+		if is_on_floor():
+			velocity.x /= friction / 5
+		else:
+			velocity.x /= friction
 	
 	#actually move
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	#flips the character horizontally
 	if not input.x == 0:
